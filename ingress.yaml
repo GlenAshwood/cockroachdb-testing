@@ -1,0 +1,19 @@
+ apiVersion: networking.k8s.io/v1 # for versions before 1.14 use extensions/v1beta1
+ kind: Ingress
+ metadata:
+   name: cockroach-gui-ingress
+   namespace: db
+   annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+ spec:
+   rules:
+   - http:
+       paths:
+       - path: 
+         pathType: ImplementationSpecific
+         backend:
+           service:
+             name: my-test-cockroachdb-public
+             port:
+               number: 8080  
