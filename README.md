@@ -1,6 +1,6 @@
 # cockroachdb-testing
 
-Orchestrate a Local Cluster with Kubernetes
+Orchestrate a Local Cluster with Kubernetes (Kind)
 
 ## Dependencies
 - [Git](https://git-scm.com/)
