@@ -15,7 +15,7 @@ To follow along, please clone the **cockroachdb-testing** repo
 git clone https://github.com/GlenAshwood/cockroachdb-testing.git
 cd cockroachdb-testing
 ```
-## Setup Kind Cluster
+## Setup a Kind Cluster
 
 Create kind Cluster
 ```
