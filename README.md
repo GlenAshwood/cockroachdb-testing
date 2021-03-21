@@ -18,9 +18,7 @@ kind create cluster --config=kind-config.yaml \
 Create db namespace and set context
 ```
 kubectl create namespace db
-
 kubectl config set-context --current --namespace=db
-helm repo add cockroachdb https://charts.cockroachdb.com/
 ```
 
 Install the [Helm client](https://helm.sh/docs/intro/install/) (version 3.0 or higher) and add the cockroachdb chart repository
