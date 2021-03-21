@@ -158,12 +158,37 @@ Exit the SQL shell and pod:
 ```
 \q
 ```
+## Accessing the DB Console
+
 Setup Ingress for DB Console:
 ```
 kubectl apply -f ingress.yaml
 ```
 Go to https://localhost and log in with the username and password you created earlier.
 
+## Simulate node failure
 
+Terminate one of the CockroachDB nodes:
+```
+kubectl delete pod my-test-cockroachdb-2
+```
+expected output
+``` bash
+pod "my-test-cockroachdb-2" deleted
+```
+In the DB Console, the Cluster Overview will soon show one node as Suspect. As Kubernetes auto-restarts the node, watch how the node once again becomes healthy.
 
+Back in the terminal, verify that the pod was automatically restarted:
+```
+kubectl get pod my-test-cockroachdb-2
+```
+expected output
+``` bash
+NAME                    READY   STATUS    RESTARTS   AGE
+my-test-cockroachdb-2   0/1     Running   0          10s
+```
+## Destroy Kind Cluster
 
+Create kind Cluster
+```
+kind delete cluster --name=test-cluster
