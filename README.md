@@ -32,7 +32,7 @@ Enable the *NGINX Ingress controller*:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 ```
-Now the Ingress is all setup. Wait until it is ready to process requests running:
+Now the Ingress is all setup. Wait until it is ready to process requests:
 ```
 kubectl wait --namespace ingress-nginx \
   --for=condition=ready pod \
@@ -49,7 +49,6 @@ Install the CockroachDB Helm chart
 ```
 helm install my-test --values my-values.yaml cockroachdb/cockroachdb
 ```
-kubectl port-forward service/my-release-cockroachdb-public 8080
 
 Get the names of the Pending CSRs:
 ```
@@ -192,3 +191,7 @@ my-test-cockroachdb-2   0/1     Running   0          10s
 Create kind Cluster
 ```
 kind delete cluster --name=test-cluster
+
+### TODO 
+
+- front end to connect to database.
