@@ -17,7 +17,7 @@ cd cockroachdb-testing
 ```
 ## Setup a Kind Cluster
 
-Create kind Cluster
+Create a kind Cluster
 ```
 kind create cluster --config=kind-config.yaml \
   --name=test-cluster
@@ -32,7 +32,7 @@ Enable the *NGINX Ingress controller*:
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/static/provider/kind/deploy.yaml
 ```
-Now the Ingress is all setup. Wait until is ready to process requests running:
+Now the Ingress is all setup. Wait until it is ready to process requests running:
 ```
 kubectl wait --namespace ingress-nginx \
   --for=condition=ready pod \
