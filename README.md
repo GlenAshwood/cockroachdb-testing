@@ -188,9 +188,10 @@ my-test-cockroachdb-2   0/1     Running   0          10s
 ```
 ## Destroy Kind Cluster
 
-Create kind Cluster
+Destroy kind Cluster
 ```
 kind delete cluster --name=test-cluster
+```
 
 ### TODO 
 
